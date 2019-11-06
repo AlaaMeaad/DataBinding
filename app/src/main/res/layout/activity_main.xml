@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="rtl"
+    tools:context=".MainActivity"
+    >
+    <data>
+    <variable
+        name="model"
+        type="com.example.databinding.modeldata.User" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    >
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.05"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <EditText
+        android:id="@+id/userid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginTop="@dimen/_35sdp"
+        app:layout_constraintEnd_toStartOf="@id/end"
+        app:layout_constraintStart_toEndOf="@id/start"
+        android:text="@{model.id}"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/userfirstname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:text="@{model.firstName}"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/end"
+        app:layout_constraintStart_toEndOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/userid"/>
+
+    <EditText
+        android:id="@+id/userlastname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
+        tools:ignore="MissingConstraints"
+        android:textSize="@dimen/_25ssp"
+        android:text="@{model.lastName}"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/end"
+        app:layout_constraintStart_toEndOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/userfirstname"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
